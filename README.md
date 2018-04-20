@@ -7,4 +7,4 @@ Here we will introduce GitHub
 
 ## R Packages
 
-Here we will introduce building small R packages
+Here we will introduce building really small R packages
