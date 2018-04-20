@@ -1,0 +1,364 @@
+---
+title: "Introduction to GitHub and R packages with RStudio"
+author: <span style="color:black">François Rousseu</span>
+date: <span style="color:black">April 20, 2018</span>
+output:
+  html_document:
+    depth: 4
+    fig_height: 5
+    fig_width: 6
+    number_sections: no
+    toc: yes
+    toc_depth: 5
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
+---
+
+<script>
+    $(document).ready(function() {
+      $items = $('div#TOC li');
+      $items.each(function(idx) {
+        num_ul = $(this).parentsUntil('#TOC').length;
+        $(this).css({'text-indent': num_ul * 20, 'padding-left': 0, 'padding-bottom': 0, 'padding-top': 0});
+      });
+
+    });
+</script>
+
+
+<style>
+
+div {
+    background-color: #CCCCCC!important;
+}
+
+pre.r {
+    background-color: #CCCCCC!important;
+    border-color: #CCCCCC!important;
+    font-size: 14pt;
+}
+
+pre code {
+  font-size: 14pt;
+}
+
+body {
+  font-size: 14pt;
+}
+
+.main-container {
+    max-width: 1300px !important;
+}
+
+#TOC {
+  font-size: 12pt;
+  border-color: white;
+}
+
+.list-group-item.active:focus{
+    z-index: 2;
+    color: darkgreen;
+    background-color: #CCCCCC;
+    border-color: red;
+    font-weight: bolder;
+    font-color: red;
+}
+
+.list-group-item.active:hover {
+    z-index: 2;
+    color: darkgreen;
+    background-color: #CCCCCC;
+    border-color: red;
+    font-weight: bolder;
+    font-color: red;
+}
+
+.list-group-item.active{
+    z-index: 2;
+    color: darkgreen;
+    background-color: #CCCCCC;
+    border-color: red;
+    font-weight: bolder;
+    font-color: red;
+}
+
+h1.title {
+  margin-top: 120px;
+  font-size: 42px;
+  color: DarkGreen;
+  font-weight: bold;
+}
+h1 {
+  padding-top: 50px;
+  font-size: 42px;
+  color: DarkGreen;
+  font-weight: bold;
+}
+h2 {
+  padding-top: 50px;
+  font-size: 36px;
+  color: DarkGreen;
+  font-weight: bold;
+}
+
+h3 {
+  padding-top: 10px;
+  font-size: 32px;
+  color: DarkGreen;
+  font-weight: bold;
+}
+h4 {
+  font-size: 28px;
+  color: DarkGreen;
+  font-weight: bold;
+}
+h5 {
+  font-size: 26px;
+  color: DarkGreen;
+  font-weight: bold;
+}
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, tidy=TRUE)
+```
+
+# GitHub
+
+<span style="color:red">work</span>
+
+## Introduction
+
+<span style="color:red">work</span>
+
+### Git
+
+<span style="color:red">work</span>
+
+[Git](https://git-scm.com/) is a system for version control that tracks changes in computer files ( [wikipedia](https://en.wikipedia.org/wiki/Git) ). It was developped by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the principal developer of Linux kernel.
+
+
+You will first need to install [Git](https://git-scm.com/), which is the version control system that will take car of most things. It can be downloaded and installed from [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Just follow the instructions for your specific platform.
+
+## Create a GitHub account
+
+Here is what a user account looks like, with a lits of repositaries and a heatmap of contributions (each *commit*). A repositary is like a folder where files are stored and organized. This folder can be synchronized with a folder on your local computer.
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images//githubuser.png)
+</div>
+
+<br><br>
+
+## Configure Git
+
+<span style="color:red">work</span>
+
+## Create a repositary
+
+The easiest way to create a new repositary is to create one on your online GitHub account. For this, you just have to go on the *Repositaries* tab and click the *New* button.
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubnewrepositary.png)
+</div>
+
+<br><br>
+
+Here, you have to:
+
+- choose a repositary name
+- give a small description of what it contains (this can be changed later)
+- decide on wether it is public or private (but only public repositaries are possible with a free account)
+- optionally check the box to include a README.md file to give more details on the content (recommended)
+
+and create your first repositary!
+
+<br><br>
+
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubnewrep.png)
+</div>
+
+## Basic operations
+
+<br><br>
+
+This is the content of the new repositary **GHRSP**. Once you have this set up online, you want to copy the content and bring this on your local computer (*clone* it) so that you can modify it. To do this, you click on the *Clone or download* button and you copy the link given. This link will be used to synchronize the content with a local RStudio project.
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubclone.png)
+</div>
+
+<br><br>
+
+To do this, create a new *Version Control* RStudio project using Git.
+
+<div style="width:5in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubnewgitproject.png)
+</div>
+
+
+<br><br>
+
+Paste the link of the repositary in the URL box and choose a directory for the project. The most logical name is the name of your repositary. You can then create the project.
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubclonerepositary.png)
+</div>
+
+Once your project is created, RStudio will reopen with the project just created. You will notice that:
+
+* there is a new *Git* tab in the Environment panel
+* the working directory is set on the project folder
+* files from the project can be opened form the *Files* tab
+    + .gitignore (list of file names that should be ignored when detecting changes)
+    + GHRSP.proj (project options)
+    + README.md (description of the repositary content)
+
+<br><br>
+
+Text
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubemptyproject.png)
+</div>
+
+### Commit
+
+<br><br>
+
+Now, suppose we want to modify the README.md file and add some information, we just have to add our modifications and then save the file. The file will appear in the Git tab with a blue box indicating that changes were detected. Changes were saved, but we may want to record these changes in the file history and **commit** these changes. A *commit* is a sort of a snapshot of the file at a certain moment. To do this, we check the box and push the *commit* button.
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcommit1.png)
+</div>
+
+<br><br>
+
+This opens a window where we can which files are commited and what the changes have been made (the green area). To complete the *commit*, a *commit* message has to be given. The *commit* and the message are for every files that were checked.
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcommit2.png)
+</div>
+
+<br><br>
+
+Now, we may want to add a small correction to the README.md file. We just have to add our modification, **save it** and once again check the blue box indicating that changes were made. If, following changes, the blue box does not appear, it indicates that the file on which modifications were made was probably not saved. When committing these new changes, the red area shows what was deleted and the green area shows the new codes.
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcommit3.png)
+</div>
+
+### Push
+
+Now that our README.md file has been commited twice, we have snapshots of the file at two different points. These commits are saved on our computer (local), but they are not yet **pushed** on our online GitHub repositary. To do this, we need to push the different commits to the repositary. This can be done using the green arrow in the *Git* tab or in the commit window (so, just after a commit). This will update the online repositary with the latest changes made on our local computer. 
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubpush.png)
+´</div>
+
+<br><br>
+
+You can then go on your online repositary to confirm that commits have been pushed online.
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcheckpush.png)
+´</div>
+
+<br><br>
+
+You can also check the history of commits (click the commit tab online) and confirm that two commits were made after the initial creation of the repositary.
+
+
+<div style="width:4in">
+![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcheckcommit.png)
+´</div>
+
+The different commits can also be explored by clicking on them. You will see changes highlighted from the previous commit.
+
+
+<br><br>
+
+It is important to understand the difference between the **commit** and the **push**.
+
+**Commit**: Saves a snapshot of a file at a specific timepoint
+
+**Push**: Pushes modifications and commits to the repositary
+
+If you are partly using GitHub as a back up system for your programming files, pushing is essential because it is what is going to deposit your local files online. Several commits will only lead to having multiple snapshots of your files on your local computer.
+
+### Pull
+
+**Pulling** is the reverse of pushing. It means updating your local repositary with the online repositary. This can be useful (or even essential!) when:
+
+- you made changes to the online repositary through another computer
+- someone else made changes to the online repositary
+- you made changes directly to the online repositary directly through the web interface (uploading a file, modified an R or a markdown file, etc.)
+
+A *pull* can be done with the blue arrow right next to the green push arrow. If there are commits on the online repositary that you don't have locally, you won't be able to push online until these changes have been included to your local repo through a *pull*. If you try pushing in such a case, an error message will be displayed that says that you first need to include these changes.
+
+If you are working from several computers, synchronizing early is important to reduce the likelihood of conflicts with different versions of the project. 
+
+## More advanced operations
+
+### Forking
+
+You can also **fork** an existing repositary from anybody else and include it in your local account. This is equivalent to copying the content of a repo and then creating a corresponding repo in your own account. This is useful if you want to:
+
+- Use somebody's else work and adapt it to your own work
+- Propose changes (bug corrections, improvements, etc.) to someonelse work. In this case, you will have to issue a *pull request* to the other user who will have to accept or reject your proposed changes. 
+
+### Branching
+
+Branches are used to have different versions of your work. This is useful with complex projects or when you start working on modifications that may break previous code or when development is still experimental.
+
+### Merging
+
+Merging is done when you want to include somebody else proposed changes or when you want to merge two branches
+
+### Issues
+
+Issues are useful to record bugs, weird behaviour, suggested improvements to your project or someone else's project.
+
+## Other opportunities
+
+### README
+
+<span style="color:red">work</span>
+
+As said earlier, the README file is used to describe the content and the use of the repositary. It can be used to document how to use the functions you are proposing or simply to include any information that is relevant.
+
+The README file is a markdown (.md) and can also be used as a regular R markdown (.Rmd) file. Thus, you can include anything that you would include in a regular R markdown file.
+
+### github.io
+
+<span style="color:red">work</span>
+
+Every user account comes with a space for a web page. By default, this webpage has the address *username@github.io*. This web page first needs to be activated through your user account. A repositary with the content has to be created. This webpage can be customized as you which. 
+
+For a basic usage, you can include in the repositary of your webpage an *index.html* file which will be displayed. Recall that html files can be generated with rmarkdown, which makes quite easy to create a simple interactive document that you could share with others.
+
+<br><br>
+
+# --- Challenge 1 ---
+
+Create your own account, your first repositary and commit and push your first changes!
+
+<br><br>
+
+# Basic R Packages
+## Why?
+## Basic Structure
+### Description file
+### Namespace
+### Functions
+### Help Files
+## Tools
+### Roxygen
+### Devtools
+## Putting package GitHub
+
+# --- Challenge 2 ---
+
+
