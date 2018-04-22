@@ -1,7 +1,7 @@
 ---
-title: "Introduction to GitHub and R packages with RStudio"
+title: "Introduction to GitHub <br> and R packages with RStudio"
 author: <span style="color:black">François Rousseu</span>
-date: <span style="color:black">April 20, 2018</span>
+date: <span style="color:black">`r Sys.Date()`</span>
 output:
   html_document:
     depth: 4
@@ -22,7 +22,6 @@ output:
         num_ul = $(this).parentsUntil('#TOC').length;
         $(this).css({'text-indent': num_ul * 20, 'padding-left': 0, 'padding-bottom': 0, 'padding-top': 0});
       });
-
     });
 </script>
 
@@ -30,7 +29,7 @@ output:
 <style>
 
 div {
-    background-color: #CCCCCC!important;
+    background-color: #DDEEDD!important;
 }
 
 pre.r {
@@ -48,7 +47,7 @@ body {
 }
 
 .main-container {
-    max-width: 1300px !important;
+    max-width: 1200px !important;
 }
 
 #TOC {
@@ -68,7 +67,7 @@ body {
 .list-group-item.active:hover {
     z-index: 2;
     color: darkgreen;
-    background-color: #CCCCCC;
+    background-color: #DDEEDD;
     border-color: red;
     font-weight: bolder;
     font-color: red;
@@ -77,7 +76,7 @@ body {
 .list-group-item.active{
     z-index: 2;
     color: darkgreen;
-    background-color: #CCCCCC;
+    background-color: #DDEEDD;
     border-color: red;
     font-weight: bolder;
     font-color: red;
@@ -85,8 +84,8 @@ body {
 
 h1.title {
   margin-top: 120px;
-  font-size: 42px;
-  color: DarkGreen;
+  font-size: 50px;
+  color: DarkRed;
   font-weight: bold;
 }
 h1 {
@@ -133,11 +132,23 @@ knitr::opts_chunk$set(echo=TRUE, tidy=TRUE)
 
 <span style="color:red">work</span>
 
+There are several reason why using a version control system such as GitHub is a good idea. It allows you to:
+
+- Keep track of changes that were made to your files
+- Forces and facilitate the organization of your code
+- Have a remote back-up of your work
+- Allows you to share your code with others
+- Allows you to easily collaborate with others
+- Centralizes your work in a single place
+- Enhance transparency and reproductibility
+- Easily share your R packages 
+
+
 ### Git
 
 <span style="color:red">work</span>
 
-[Git](https://git-scm.com/) is a system for version control that tracks changes in computer files ( [wikipedia](https://en.wikipedia.org/wiki/Git) ). It was developped by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the principal developer of Linux kernel.
+[Git](https://git-scm.com/) is a system for version control that tracks changes in computer files ( [wikipedia](https://en.wikipedia.org/wiki/Git) ). It was developped by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the principal developer of the Linux kernel.
 
 
 You will first need to install [Git](https://git-scm.com/), which is the version control system that will take car of most things. It can be downloaded and installed from [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Just follow the instructions for your specific platform.
@@ -146,8 +157,8 @@ You will first need to install [Git](https://git-scm.com/), which is the version
 
 Here is what a user account looks like, with a lits of repositaries and a heatmap of contributions (each *commit*). A repositary is like a folder where files are stored and organized. This folder can be synchronized with a folder on your local computer.
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images//githubuser.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images//githubuser.png)
 </div>
 
 <br><br>
@@ -160,8 +171,8 @@ Here is what a user account looks like, with a lits of repositaries and a heatma
 
 The easiest way to create a new repositary is to create one on your online GitHub account. For this, you just have to go on the *Repositaries* tab and click the *New* button.
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubnewrepositary.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubnewrepositary.png)
 </div>
 
 <br><br>
@@ -178,8 +189,8 @@ and create your first repositary!
 <br><br>
 
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubnewrep.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubnewrep.png)
 </div>
 
 ## Basic operations
@@ -188,8 +199,8 @@ and create your first repositary!
 
 This is the content of the new repositary **GHRSP**. Once you have this set up online, you want to copy the content and bring this on your local computer (*clone* it) so that you can modify it. To do this, you click on the *Clone or download* button and you copy the link given. This link will be used to synchronize the content with a local RStudio project.
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubclone.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubclone.png)
 </div>
 
 <br><br>
@@ -197,7 +208,7 @@ This is the content of the new repositary **GHRSP**. Once you have this set up o
 To do this, create a new *Version Control* RStudio project using Git.
 
 <div style="width:5in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubnewgitproject.png)
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubnewgitproject.png)
 </div>
 
 
@@ -205,8 +216,8 @@ To do this, create a new *Version Control* RStudio project using Git.
 
 Paste the link of the repositary in the URL box and choose a directory for the project. The most logical name is the name of your repositary. You can then create the project.
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubclonerepositary.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubclonerepositary.png)
 </div>
 
 Once your project is created, RStudio will reopen with the project just created. You will notice that:
@@ -221,8 +232,8 @@ Once your project is created, RStudio will reopen with the project just created.
 <br><br>
 
 Text
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubemptyproject.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubemptyproject.png)
 </div>
 
 ### Commit
@@ -230,40 +241,40 @@ Text
 <br><br>
 
 Now, suppose we want to modify the README.md file and add some information, we just have to add our modifications and then save the file. The file will appear in the Git tab with a blue box indicating that changes were detected. Changes were saved, but we may want to record these changes in the file history and **commit** these changes. A *commit* is a sort of a snapshot of the file at a certain moment. To do this, we check the box and push the *commit* button.
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcommit1.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubcommit1.png)
 </div>
 
 <br><br>
 
 This opens a window where we can which files are commited and what the changes have been made (the green area). To complete the *commit*, a *commit* message has to be given. The *commit* and the message are for every files that were checked.
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcommit2.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubcommit2.png)
 </div>
 
 <br><br>
 
 Now, we may want to add a small correction to the README.md file. We just have to add our modification, **save it** and once again check the blue box indicating that changes were made. If, following changes, the blue box does not appear, it indicates that the file on which modifications were made was probably not saved. When committing these new changes, the red area shows what was deleted and the green area shows the new codes.
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcommit3.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubcommit3.png)
 </div>
 
 ### Push
 
 Now that our README.md file has been commited twice, we have snapshots of the file at two different points. These commits are saved on our computer (local), but they are not yet **pushed** on our online GitHub repositary. To do this, we need to push the different commits to the repositary. This can be done using the green arrow in the *Git* tab or in the commit window (so, just after a commit). This will update the online repositary with the latest changes made on our local computer. 
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubpush.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubpush.png)
 ´</div>
 
 <br><br>
 
 You can then go on your online repositary to confirm that commits have been pushed online.
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcheckpush.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubcheckpush.png)
 ´</div>
 
 <br><br>
@@ -271,8 +282,8 @@ You can then go on your online repositary to confirm that commits have been push
 You can also check the history of commits (click the commit tab online) and confirm that two commits were made after the initial creation of the repositary.
 
 
-<div style="width:4in">
-![](C:/Users/rouf1703/Documents/UdeS/GitHub/GHRSP/images/githubcheckcommit.png)
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/githubcheckcommit.png)
 ´</div>
 
 The different commits can also be explored by clicking on them. You will see changes highlighted from the previous commit.
@@ -301,6 +312,8 @@ A *pull* can be done with the blue arrow right next to the green push arrow. If 
 If you are working from several computers, synchronizing early is important to reduce the likelihood of conflicts with different versions of the project. 
 
 ## More advanced operations
+
+RStudio only offers simple operations through their user interface. For more advanced operations, the shell and command lines have to be used. For some common, but more advanced operations, the web interface can also be used. Here is a small overview of other common , but a bit more advance operations.
 
 ### Forking
 
@@ -341,24 +354,89 @@ For a basic usage, you can include in the repositary of your webpage an *index.h
 
 <br><br>
 
-# --- Challenge 1 ---
+## --- CHALLENGE 1 ---
 
 Create your own account, your first repositary and commit and push your first changes!
 
 <br><br>
 
 # Basic R Packages
-## Why?
+
+This is an introduction to simple R package creation. We will briefly introduce simple R packages creation for the purpose of organizing your own work or important function or for facilitating the sharing of code within your study group. We won't go into the many details of package creation. We will only look at the basic structure required for building a package and how GitHub can facilitate the use of such personal or group packages. We will mostly rely on RStudio functionalitie and the [devtools]() and [roxygen]() packages to introduce how to build simple R packages. 
+
+Just as there are several reason why you might want to use GitHub or a version control system, there are many reasons why you might want to organize certain important pieces of code in a package.
+
+- Groups important functions in a common place instead of across scattered R files
+- Forces you to document your functions and thus increase usability
+- Facilitates the sharing of functions with others from your study group
+- First step toward building an official package pusblished on [CRAN]()
+
+For a complete description of the package creation process and of its requirements, visit the [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html) manual which is the official and most complete source of information on R package creation.
+
+Another thorough, but more user-friendly resource is the [R packages](http://r-pkgs.had.co.nz/)(available online) book by Hadley Wickam. This is probably the best place to start for a more complete look at package creation (and even for using GitHub).
+
 ## Basic Structure
-### Description file
-### Namespace
-### Functions
-### Help Files
+
+An R package has the basic structure:
+
+- **DESCRIPTION** file: metadata of the package (what the package does, dependencies, authors, licenses, etc.)
+- **NAMESPACE**: in short, a file that indicates which elements of the package (functions, data) are available to the user
+- **R/** directory: where functions are stored
+- **man/** directory: where help files are stored
+
+### DESCRIPTION
+
+This is the metadata of the package. Here is an example of what it can look like. Some fields are mandatory (*Package*, *Version*, *License*, *Description*, *Title*, *Author*, and *Maintainer*). This is the example for the [Writing R Extensions]() 
+
+```{r, tidy=FALSE, eval=FALSE, highlight=FALSE }
+
+Package: mypackage
+Title: What The Package Does (one line, title case required)
+Version: 0.1
+Authors@R: person("First", "Last", email = "first.last@example.com",
+                  role = c("aut", "cre"))
+Description: What the package does (one paragraph)
+Depends: R (>= 3.1.0)
+License: What license is it under?
+LazyData: true
+
+```
+
+
+### NAMESPACE
+
+The NAMESPACE is the file that lists what has to be exported from the package and available to the user and what should be imported from other packages. It is a really important file that prevents conflicts between the content of several packages. A more complete discussion of the NAMESPACE is way beyond the scope of this basic tutorial. Here, we will assume everything is exported and available to the user.
+
+### R/ directory
+
+This is where functions are stored. If your package is not to complicated (no S3 or S4 methods), an .R file is used for each of your function.
+
+### man/ directory
+
+This is where help files are stored. R help files are similar to LaTeX files and have the *.Rd* extension. With simple functions, there is usually an help file for each exported function. If a function is not exported through the NAMESPACE, it does not need to be documented in the help files. 
+
+## Creating a package
+
+There is the old school way of doing things through `package.skeleton`, `prompt`, etc.
+
+One option is to create the package through RStudio and then to link it to an online GitHub repositary. This can be done doing *File > New Project > New Directory > R package*
+
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/packagecreater.png)
+´</div>
+
+
+Another and probably easier way is to first create a GitHub online repositary and then to clone this repositary using a version controled R project. Once this is done and you have the R project opened, the package structure can be simply created by typing:
+
+
+
+### Basic system
+### devtools/roxygen2
 ## Tools
 ### Roxygen
 ### Devtools
 ## Putting package GitHub
 
-# --- Challenge 2 ---
+## --- CHALLENGE 2 ---
 
 
