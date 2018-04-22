@@ -375,6 +375,12 @@ For a complete description of the package creation process and of its requiremen
 
 Another thorough, but more user-friendly resource is the [R packages](http://r-pkgs.had.co.nz/)(available online) book by Hadley Wickam. This is probably the best place to start for a more complete look at package creation (and even for using GitHub).
 
+## Development tools 
+
+RTools and MikTex
+
+links
+
 ## Basic Structure
 
 An R package has the basic structure:
@@ -417,7 +423,7 @@ This is where help files are stored. R help files are similar to LaTeX files and
 
 ## Creating a package
 
-There is the old school way of doing things through `package.skeleton`, `prompt`, etc.
+There is the old school way of doing things through `package.skeleton`, `prompt`, etc. and directly editing help files.
 
 One option is to create the package through RStudio and then to link it to an online GitHub repositary. This can be done doing *File > New Project > New Directory > R package*
 
@@ -439,4 +445,10 @@ Another and probably easier way is to first create a GitHub online repositary an
 
 ## --- CHALLENGE 2 ---
 
+# LINKS
 
+[A Quickstart Guide for Building Your First R Package](https://methodsblog.wordpress.com/2015/11/30/building-your-first-r-package/): A short introduction.
+
+[Writing R Extensions](): The official documentation on writing R packages. 
+
+[R Packages](http://r-pkgs.had.co.nz/): A book (online) on package development by Hadley Wickham 
