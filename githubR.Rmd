@@ -35,15 +35,15 @@ div {
 pre.r {
     background-color: #CCCCCC!important;
     border-color: #CCCCCC!important;
-    font-size: 10pt;
+    font-size: 12pt;
 }
 
 pre code {
-  font-size: 10pt;
+  font-size: 12pt;
 }
 
 body {
-  font-size: 10pt;
+  font-size: 12pt;
 }
 
 .main-container {
@@ -510,29 +510,52 @@ Once again, you will have to edit the files according to your package. Once agai
 ![](C:/Users/User/Documents/GitHub/GHRSP/images/packageinsert.png)
 ´</div>
 
+#### Tags
+
+- @title
+- @description
+- @param
+- @return
+- @export
+- @examples
+- @seealso
+
+Once you edited the different elements, you can updates the help files by simply using the `document` function.
+
+
+```{r}
+document() # This function updates the help files edited through roxygen comments
+```
+
 <div style="width:8in">
 ![](C:/Users/User/Documents/GitHub/GHRSP/images/packagedocument.png)
 ´</div>
+
 
 <div style="width:8in">
 ![](C:/Users/User/Documents/GitHub/GHRSP/images/packagedocumentRd.png)
 ´</div>
 
-#### Tags
+Once you updated the help files, you have several options to access your functions as if they were (almost) in a package. You can first use `load_all` which will simulate having the package installed. You can reload your package as many times as you like during development.
 
-@title
-@description
-@param
-@export
-@seealso
+```{r}
+load_all() # Loads a developing package almost as if it were a package loaded through library
+```
 
 
+Another option is to use *Build > Clean and Rebuild* which will install and load the package (just like a real package).
 
-### Basic system
-### devtools/roxygen2
-## Tools
-### Roxygen
-### Devtools
+## Workflow
+
+1. Create GitHub repo and clone in an RStudio project
+2. Use `devtools::setup` to create the structure
+3. Document your help files through roxygen comments
+4. Use devtools::document to update help files
+5. Use `load_all` to study the ouput
+6. Clean and Rebuild to install the package
+7. Push you package to GitHub to make it available
+
+
 ## Putting package GitHub
 
 ## --- CHALLENGE 3 ---
