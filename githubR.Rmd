@@ -35,15 +35,15 @@ div {
 pre.r {
     background-color: #CCCCCC!important;
     border-color: #CCCCCC!important;
-    font-size: 14pt;
+    font-size: 10pt;
 }
 
 pre code {
-  font-size: 14pt;
+  font-size: 10pt;
 }
 
 body {
-  font-size: 14pt;
+  font-size: 10pt;
 }
 
 .main-container {
@@ -51,7 +51,7 @@ body {
 }
 
 #TOC {
-  font-size: 12pt;
+  font-size: 10pt;
   border-color: white;
 }
 
@@ -120,17 +120,13 @@ h5 {
 
 </style>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=TRUE, tidy=TRUE)
+```{r setup, include=TRUE,echo=FALSE}
+knitr::opts_chunk$set(echo=TRUE, tidy=TRUE, eval=FALSE, fig.align="center")
 ```
 
-# GitHub
-
-<span style="color:red">work</span>
+# GITHUB
 
 ## Introduction
-
-<span style="color:red">work</span>
 
 There are several reason why using a version control system such as GitHub is a good idea. It allows you to:
 
@@ -146,8 +142,6 @@ There are several reason why using a version control system such as GitHub is a 
 
 ### Git
 
-<span style="color:red">work</span>
-
 [Git](https://git-scm.com/) is a system for version control that tracks changes in computer files ( [wikipedia](https://en.wikipedia.org/wiki/Git) ). It was developped by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the principal developer of the Linux kernel.
 
 
@@ -155,7 +149,7 @@ You will first need to install [Git](https://git-scm.com/), which is the version
 
 ## Create a GitHub account
 
-Here is what a user account looks like, with a lits of repositaries and a heatmap of contributions (each *commit*). A repositary is like a folder where files are stored and organized. This folder can be synchronized with a folder on your local computer.
+Here is what a user account looks like, with a lits of repositaries and a heatmap of contributions. A repositary is like a folder where files are stored and organized. This folder can be synchronized with a folder on your local computer.
 
 <div style="width:8in">
 ![](C:/Users/User/Documents/GitHub/GHRSP/images//githubuser.png)
@@ -165,11 +159,29 @@ Here is what a user account looks like, with a lits of repositaries and a heatma
 
 ## Configure Git
 
-<span style="color:red">work</span>
+Once Git is installed and your GitHub account is created, you will have to configure Git with your username and your email. You will need to use the same info you provided in your GitHub account.
+
+In the shell (or a terminal), type the following command to configure your credentials:
+
+<pre style="background-color:black">
+<span style="color:white; background-color:black">git config --global user.name "user name"</span>
+<span style="color:white; background-color:black">git config --global user.email "email address"</span>
+</pre>
+
+To verify that everything was set up correctly, you can type:
+
+<pre style="background-color:black">
+<span style="color:white; background-color:black">git config --global --list</span>
+</pre>
+
+
+## --- CHALLENGE 1 ---
+
+Create your GitHub user account and configure Git
 
 ## Create a repositary
 
-The easiest way to create a new repositary is to create one on your online GitHub account. For this, you just have to go on the *Repositaries* tab and click the *New* button.
+The easiest way to [create a new repositary](https://help.github.com/articles/create-a-repo/) is to create one on your online GitHub account. For this, you just have to go on the *Repositaries* tab and click the *New* button.
 
 <div style="width:8in">
 ![](C:/Users/User/Documents/GitHub/GHRSP/images/githubnewrepositary.png)
@@ -354,13 +366,13 @@ For a basic usage, you can include in the repositary of your webpage an *index.h
 
 <br><br>
 
-## --- CHALLENGE 1 ---
+## --- CHALLENGE 2 ---
 
 Create your own account, your first repositary and commit and push your first changes!
 
 <br><br>
 
-# Basic R Packages
+# BASIC R PACKAGE
 
 This is an introduction to simple R package creation. We will briefly introduce simple R packages creation for the purpose of organizing your own work or important function or for facilitating the sharing of code within your study group. We won't go into the many details of package creation. We will only look at the basic structure required for building a package and how GitHub can facilitate the use of such personal or group packages. We will mostly rely on RStudio functionalitie and the [devtools]() and [roxygen]() packages to introduce how to build simple R packages. 
 
@@ -377,15 +389,16 @@ Another thorough, but more user-friendly resource is the [R packages](http://r-p
 
 ## Development tools 
 
-RTools and MikTex
+There are special tools needed for building R packages that contain compiled code such as C++ or when you want to build packages from source. In this tutorial, we probably won't need them, but it is good to have them if you plan to develop more complex packages or if you want to install packages directly from GitHub. The RStudio team provides a list of these tools depending on the platform. 
 
-links
+[Package Development Prerequisites](https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites)
+
 
 ## Basic Structure
 
 An R package has the basic structure:
 
-- **DESCRIPTION** file: metadata of the package (what the package does, dependencies, authors, licenses, etc.)
+- **DESCRIPTION**: metadata of the package (what the package does, dependencies, authors, licenses, etc.)
 - **NAMESPACE**: in short, a file that indicates which elements of the package (functions, data) are available to the user
 - **R/** directory: where functions are stored
 - **man/** directory: where help files are stored
@@ -423,7 +436,45 @@ This is where help files are stored. R help files are similar to LaTeX files and
 
 ## Creating a package
 
-There is the old school way of doing things through `package.skeleton`, `prompt`, etc. and directly editing help files.
+### The traditional way
+
+The traditional way of creating packages is through functions such as `package.skeleton` or `prompt`. For example, let's use the first function. This function creates the necessary files and the infrastructure for a package. 
+
+```{r, eval=FALSE}
+package.skeleton("newpack")
+```
+
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/packageskeleton.png)
+´</div>
+
+This creates a folder named *newpack* in which the package is stored. Each file now has to be edited to correspond to your package. Then Read-and-delete-me file can be deleted and files in the R/ and man/ folder can be replaced by your own functions.
+
+To do this, open a new R script and define a new function. Save this file with the same name as the function (here a file *f.R*) and make sure to put the file is in the R folder of the package.
+```{r, eval=TRUE}
+f<-function(x,y){
+	x+y
+}
+
+```
+
+Send `f` to the R console and apply the `prompt` function to your function `f`. This will create an help file (*f.Rd*) that you will have to edit to document your function. A message should tell you to edit the file and to move it to the *man* folder. By default, `prompt` will create the *.Rd* file in the working directory (not necessarily in the package folder).
+```{r, eval=TRUE}
+
+prompt(f)
+
+```
+
+
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/packageprompt.png)
+´</div>
+
+The *.Rd* file produced would now have to be edited to reflect what the `f` function does. One of the difficulty with this approach is that the function file and the help file for the function are separate. Thus, you need to remember to edit both files when important changes are made. 
+
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/packagepromptRd.png)
+´</div>
 
 One option is to create the package through RStudio and then to link it to an online GitHub repositary. This can be done doing *File > New Project > New Directory > R package*
 
@@ -431,8 +482,49 @@ One option is to create the package through RStudio and then to link it to an on
 ![](C:/Users/User/Documents/GitHub/GHRSP/images/packagecreater.png)
 ´</div>
 
-
 Another and probably easier way is to first create a GitHub online repositary and then to clone this repositary using a version controled R project. Once this is done and you have the R project opened, the package structure can be simply created by typing:
+
+
+### The easier way
+
+An easier way is to rely on the workflow provided by the packages [devtools](https://github.com/r-lib/devtools) and [roxygen2](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html). The first thing to notice with this workflow is that the help file and the function are combined on the same *.R* script.
+
+Assuming you are into an RStudio projet that has the name of your package, you can use the function `setup` from package devtools to generate the package structure. You'll notice that the files created are simpler compared to the ones generated by `package.skeleton`.
+
+The function `setup` assumes that the folder containing your package is already created (it it your RStudio project). If it is not, you can also use the function `create` which will also create this folder.
+
+```{r}
+library(devtools)
+setup()
+```
+
+Once again, you will have to edit the files according to your package. Once again, you can create an new R script that has a function in it, but this time, the help documentation will be written directly in the *f.R* script. You can do this by inserting a **Roxygen skeleton** at the beginning of the file. In the *f.R* file, put the cursor in the function and go to *Code > Insert Roxygen Skeleton*. Information will be added at the top of the file. Each line is preceded by `#!` which is the symbol for roxygen comments. This is where you are going to write the help file. The `@` symbol is used to associate each element with a section of the help file. The minimal tags are:
+
+
+
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/packagesetup.png)
+´</div>
+
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/packageinsert.png)
+´</div>
+
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/packagedocument.png)
+´</div>
+
+<div style="width:8in">
+![](C:/Users/User/Documents/GitHub/GHRSP/images/packagedocumentRd.png)
+´</div>
+
+#### Tags
+
+@title
+@description
+@param
+@export
+@seealso
 
 
 
@@ -443,7 +535,7 @@ Another and probably easier way is to first create a GitHub online repositary an
 ### Devtools
 ## Putting package GitHub
 
-## --- CHALLENGE 2 ---
+## --- CHALLENGE 3 ---
 
 # LINKS
 
@@ -452,3 +544,9 @@ Another and probably easier way is to first create a GitHub online repositary an
 [Writing R Extensions](): The official documentation on writing R packages. 
 
 [R Packages](http://r-pkgs.had.co.nz/): A book (online) on package development by Hadley Wickham 
+
+[Easy websites with GitHub pages](http://kbroman.org/simple_site/): A tutorial on creating a webpage associated with a GitHub project
+
+[The Git Workflow](https://www.git-tower.com/blog/workflow-of-git)
+
+[CheatSheet: Package development with devtools](https://ucsb-bren.github.io/env-info/refs/cheatsheets/devtools-cheatsheet.pdf)
