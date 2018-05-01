@@ -30,12 +30,13 @@ output:
 
 hr {
     display: block;
-    height: 500px;
+    height: 00px;
     border: 0;
     border-top: 0px solid darkgreen;
-    border-bottom: 0px solid darkgreen;
+    border-bottom: 3px solid darkgreen;
     margin: 1em 0;
-    padding-top: 100px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 
@@ -100,13 +101,13 @@ h1.title {
   font-weight: bold;
 }
 h1 {
-  padding-top: 50px;
+  padding-top: 10px;
   font-size: 42px;
   color: DarkGreen;
   font-weight: bold;
 }
 h2 {
-  padding-top: 50px;
+  padding-top: 10px;
   font-size: 36px;
   color: DarkGreen;
   font-weight: bold;
@@ -168,7 +169,7 @@ You will first need to install [Git](https://git-scm.com/), which is the version
 
 Here is what a user account looks like, with a list of repositaries and a heatmap of contributions. A repositary is like a folder where files are stored and organized. This folder can be synchronized with a folder on your local computer.
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images//githubuser.png)
 </div>
 
@@ -184,8 +185,6 @@ In the shell (or a terminal), type the following command to configure your crede
 <span style="color:white; background-color:black">git config --global user.name "user name"</span>
 <span style="color:white; background-color:black">git config --global user.email "email address"</span>
 </pre>
-
-<hr>
 
 To verify that everything was set up correctly, you can type:
 
@@ -205,7 +204,7 @@ Create your GitHub user account and configure Git!
 
 The easiest way to [create a new repositary](https://help.github.com/articles/create-a-repo/) is to create one on your online GitHub account. For this, you just have to go on the *Repositaries* tab and click the *New* button.
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubnewrepositary.png)
 </div>
 
@@ -222,7 +221,7 @@ and create your first repositary!
 
 <hr>
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubnewrep.png)
 </div>
 
@@ -234,7 +233,7 @@ This is the content of the new repositary **GHRSP**. Once you have this set up o
 
 <hr>
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubclone.png)
 </div>
 
@@ -250,7 +249,7 @@ To do this, create a new *Version Control* RStudio project using Git.
 
 Paste the link of the repositary in the URL box and choose a directory for the project. The most logical name is the name of your repositary. You can then create the project.
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubclonerepositary.png)
 </div>
 
@@ -268,7 +267,7 @@ Once your project is created, RStudio will reopen with the project just created.
 <hr>
 
 Text
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubemptyproject.png)
 </div>
 
@@ -280,7 +279,7 @@ Now, suppose we want to modify the README.md file and add some information, we j
 
 <hr>
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubcommit1.png)
 </div>
 
@@ -288,7 +287,7 @@ Now, suppose we want to modify the README.md file and add some information, we j
 
 This opens a window where we can which files are commited and what the changes have been made (the green area). To complete the *commit*, a *commit* message has to be given. The *commit* and the message are for every files that were checked.
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubcommit2.png)
 </div>
 
@@ -296,7 +295,7 @@ This opens a window where we can which files are commited and what the changes h
 
 Now, we may want to add a small correction to the README.md file. We just have to add our modification, **save it** and once again check the blue box indicating that changes were made. If, following changes, the blue box does not appear, it indicates that the file on which modifications were made was probably not saved. When committing these new changes, the red area shows what was deleted and the green area shows the new codes.
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubcommit3.png)
 </div>
 
@@ -306,7 +305,7 @@ Now, we may want to add a small correction to the README.md file. We just have t
 
 Now that our README.md file has been commited twice, we have snapshots of the file at two different points. These commits are saved on our computer (local), but they are not yet **pushed** on our online GitHub repositary. To do this, we need to push the different commits to the repositary. This can be done using the green arrow in the *Git* tab or in the commit window (so, just after a commit). This will update the online repositary with the latest changes made on our local computer. 
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubpush.png)
 ´</div>
 
@@ -314,7 +313,7 @@ Now that our README.md file has been commited twice, we have snapshots of the fi
 
 You can then go on your online repositary to confirm that commits have been pushed online.
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubcheckpush.png)
 ´</div>
 
@@ -322,7 +321,7 @@ You can then go on your online repositary to confirm that commits have been push
 
 You can also check the history of commits (click the commit tab online) and confirm that two commits were made after the initial creation of the repositary. The different commits can also be explored by clicking on them. You will see changes highlighted from the previous commit.
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubcheckcommit.png)
 ´</div>
 
@@ -357,6 +356,8 @@ If you are working from several computers, synchronizing early is important to r
 ## More advanced operations
 
 RStudio only offers simple operations through their user interface. For more advanced operations, the shell and command lines have to be used. For some common, but more advanced operations, the web interface can also be used. Here is a small overview of other common, but a bit more advance operations.
+
+[GitHub Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
 
 <hr>
 
@@ -501,7 +502,7 @@ package.skeleton("newpack")
 
 <hr>
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/packageskeleton.png)
 ´</div>
 
@@ -530,7 +531,7 @@ prompt(f)
 
 <hr>
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/packageprompt.png)
 ´</div>
 
@@ -538,7 +539,7 @@ prompt(f)
 
 The *.Rd* file produced would now have to be edited to reflect what the `f` function does. One of the difficulty with this approach is that the function file and the help file for the function are separate. Thus, you need to remember to edit both files when important changes are made. 
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/packagepromptRd.png)
 ´</div>
 
@@ -546,7 +547,7 @@ The *.Rd* file produced would now have to be edited to reflect what the `f` func
 
 One option is to create the package through RStudio and then to link it to an online GitHub repositary. This can be done doing *File > New Project > New Directory > R package*
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/packagecreater.png)
 ´</div>
 
@@ -577,13 +578,13 @@ Once again, you will have to edit the files according to your package. Once agai
 
 <hr>
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/packagesetup.png)
 ´</div>
 
 <hr>
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/packageinsert.png)
 ´</div>
 
@@ -620,13 +621,13 @@ document() # This function updates the help files edited through roxygen comment
 
 <hr>
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/packagedocument.png)
 ´</div>
 
 <hr>
 
-<div style="width:8in">
+<div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/packagedocumentRd.png)
 ´</div>
 
