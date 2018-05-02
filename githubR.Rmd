@@ -168,7 +168,7 @@ You will first need to install [Git](https://git-scm.com/), which is the version
 
 GitHub is an online platform for Git projects.
 
-Here is what a user account looks like, with a list of repositaries (repo) and a heatmap of contributions. A repositary is like a folder where files are stored and organized. This folder can be synchronized with a folder on your local computer.
+Here is what a user account looks like, with a list of repositaries (repo) and a heatmap of contributions. A repository is like a folder where files are stored and organized. This folder can be synchronized with a folder on your local computer.
 
 <div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images//githubuser.png)
@@ -201,9 +201,9 @@ Create your GitHub user account and configure Git!
 
 <hr>
 
-## Create a repositary
+## Create a repository
 
-The easiest way to [create a new repositary](https://help.github.com/articles/create-a-repo/) is to create one on your online GitHub account. For this, you just have to go on the *Repositaries* tab and click the *New* button.
+The easiest way to [create a new repository](https://help.github.com/articles/create-a-repo/) is to create one on your online GitHub account. For this, you just have to go on the *Repositaries* tab and click the *New* button.
 
 <div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubnewrepositary.png)
@@ -213,12 +213,12 @@ The easiest way to [create a new repositary](https://help.github.com/articles/cr
 
 Here, you have to:
 
-- choose a repositary name
+- choose a repository name
 - give a small description of what it contains (this can be changed later)
 - decide on wether it is public or private (but only public repositaries are possible with a free account)
 - optionally check the box to include a *README.md* file to give more details on the content (recommended)
 
-and create your first repositary!
+and create your first repository!
 
 <hr>
 
@@ -304,7 +304,7 @@ Now, we may want to add a small correction to the README.md file. We just have t
 
 ### Push
 
-Now that our *README.md* file has been commited twice, we have snapshots of the file at two different points. These commits are saved on your local computer, but they are not yet **pushed** on your online GitHub repo. To do this, we need to push the different commits to the repositary. This can be done using the green arrow in the *Git* tab or in the commit window (so, just after a commit). This will update the online repo with the latest changes made to your local computer. 
+Now that our *README.md* file has been commited twice, we have snapshots of the file at two different points. These commits are saved on your local computer, but they are not yet **pushed** on your online GitHub repo. To do this, we need to push the different commits to the repository. This can be done using the green arrow in the *Git* tab or in the commit window (so, just after a commit). This will update the online repo with the latest changes made to your local computer. 
 
 <div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/githubpush.png)
@@ -342,7 +342,7 @@ If you are partly using GitHub as a back up system for your programming files, p
 
 **Pulling** is the reverse of pushing. It means updating your local repo with the online repositary. This can be useful (or even essential!) when:
 
-- you made changes to the online repositary through another computer
+- you made changes to the online repo through another computer
 - someone else made changes to the online repo
 - you made changes to the online repo directly through the web interface (uploading a file, modified an R or a markdown file, etc.)
 
@@ -372,7 +372,7 @@ Branches can also be used to host a project webpage.
 
 ### Forking
 
-You can also **fork** an existing repositary from anybody else and include it in your local account. This is equivalent to copying the content of a repo and then creating a corresponding repo in your own account. This is useful if you want to:
+You can also **fork** an existing repository from anybody else and include it in your local account. This is equivalent to copying the content of a repo and then creating a corresponding repo in your own account. This is useful if you want to:
 
 - Use someone else's work and adapt it to your own work
 - Propose changes (bug corrections, improvements, etc.) to someon else' work. In this case, you will have to issue a *pull request* to the other user who will have to accept or reject your proposed changes. 
@@ -425,7 +425,7 @@ For a basic usage, you can include in the repo of your webpage an *index.html* f
 
 ## --- CHALLENGE 2 ---
 
-Create your first repositary and commit and push your first changes!
+Create your first repository and commit and push your first changes!
 
 <hr>
 
@@ -562,7 +562,7 @@ The *.Rd* file produced would now have to be edited to reflect what the `f` func
 
 <hr>
 
-One option is to create the package through RStudio and then to link it to an online GitHub repositary. This can be done doing *File > New Project > New Directory > R package*
+One option is to create the package through RStudio and then to link it to an online GitHub repository. This can be done doing *File > New Project > New Directory > R package*
 
 <div style="width:21.5cm">
 ![](C:/Users/God/Documents/GHRSP/images/packagecreater.png)
@@ -577,7 +577,7 @@ An easier way is to rely on the workflow provided by the packages [devtools](htt
 
 Assuming you are into an RStudio projet that has the name of your package, you can use the function `setup` from package devtools to generate the package structure. You'll notice that the files created are simpler compared to the ones generated by `package.skeleton`.
 
-Another and probably easier way is to first create a GitHub online repositary and then to clone this repositary using a version controled R Git project.
+Another and probably easier way is to first create a GitHub online repository and then to clone this repository using a version controled R Git project.
 
 <hr>
 
